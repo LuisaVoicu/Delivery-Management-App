@@ -1,0 +1,46 @@
+cum ma conectez la baza de date?
+- cu $connection = new mysqli($servername, $username, $password, $database);
+
+-- cum citesc date de la utilizator? POST(create) - GET(edit)
+	    $numep = $_POST["NUMEP"];
+   	    $oras = $_POST["ORAS"];
+
+
+-- cum afisez elementele dintr-un tabel? cu fetch--- metoda folosita pentru a returna o singura linie 
+Fetch API asigura pentru interfata JS accesarea si manipularea unor parti din protocol...de exemplu request sau resurse
+
+
+-- cum apelez procedura stocata? "Call Cerinta3a('$litera')"
+_____________________
+partea de edit/delete/create din interfata
+
+(ex proiecte)
+--> pornesc din indexProiecte
+--> butonul de Adauga Proiect ma redirectioneaza catre editProiecte
+--> creez tabelele si in interios ma conectez la baza de date pentru a afisa datele
+		--> prin sql query-- $sql = $connection->query($sql)
+
+		--> afisam elementele prin fetch_assoc --
+				+ pentru fiecare rand ma asigur ca am si butoane de edit si delete ce redirectioneaza carte editProiecte si deleteProiecte
+
+
+-- createProiecte
+
+		-- conectare la baza de date cu mysqli
+		-- verificare daca au fost date primise prin metoda POST
+			$_SERVER['REQUEST_METHOD'] == 'POST'
+		-- apelez query: $sql = "INSERT INTO..."
+
+		-- ma reintorc la pagina index
+
+-- editProiecte
+		-- $_SERVER['REQUEST_METHOD'] == GET
+
+		-->-- get method-- primesc datele din tabel 
+		-- daca isset($_GET["IDP"]) -- ma reintorc la indexProiecte
+		-- altfel apelez query ul de afisare a datelor cu id-ul corespunzator ( cand intru in edit datele raman in casete,neschimbate-ulterior le post schimba eu)
+		
+		-->-- POST method-- primesc datele scrise de utilizator in casetele de edit si updatez baza de date
+
+
+-- deleteProiecte -- ma conectez la baza de date +  query 
